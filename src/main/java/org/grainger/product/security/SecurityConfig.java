@@ -21,6 +21,7 @@ public class SecurityConfig {
                 .cors((cors) -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests( request -> {
                     request.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+                    request.anyRequest().permitAll();
                 });
         return httpSecurity.build();
     }
@@ -28,7 +29,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
+        //config.setAllowCredentials(true);
         config.setAllowedOrigins(List.of("http://localhost:5173"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
