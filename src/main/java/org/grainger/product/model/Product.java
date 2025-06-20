@@ -10,12 +10,20 @@ public class Product {
     private Long id;
     @Column(unique = true)
     private String name;
+    @Column
+    private Double price;
 
     public Product() {
     }
 
     public Product(String name) {
         this.name = name;
+    }
+
+    public Product(Long id, String name, Double price) {
+        this.name = name;
+        this.price = price;
+        this.id = id;
     }
 
     public Long getId() {
@@ -32,5 +40,13 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

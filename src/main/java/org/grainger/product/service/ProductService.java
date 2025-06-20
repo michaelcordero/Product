@@ -15,6 +15,14 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+//    public Product getProductByName(String name) {
+//        return productRepository.getByName(name);
+//    }
+
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
+
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }

@@ -23,5 +23,15 @@ public class ProductController {
     public Product createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
     }
+
+//    @GetMapping
+//    public Product getProductByName(@RequestBody String name) {
+//        return productService.getProductByName(name);
+//    }
+
+    @PutMapping
+    public Product updateProduct(@RequestBody Product product) {
+       return productService.updateProduct(product);
+    }
 }
 
