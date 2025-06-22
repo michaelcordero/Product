@@ -21,7 +21,9 @@ services:
      POSTGRES_DB: product
      POSTGRES_USER: product-user
      POSTGRES_PASSWORD: product-user-password
+   ports:
+     - "5432:5432"
    volumes:
-      - product-data://var/lib/postgresql/data
+      - product-data:/var/lib/postgresql/data
 volumes:
   product-data:
